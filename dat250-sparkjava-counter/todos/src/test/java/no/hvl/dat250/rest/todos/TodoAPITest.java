@@ -72,6 +72,8 @@ public class TodoAPITest {
 
     private String doRequest(Request request) {
         try (Response response = client.newCall(request).execute()) {
+        	System.out.print(response.body());
+        	System.out.print("\n");
             return Objects.requireNonNull(response.body()).string();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -210,7 +212,6 @@ public class TodoAPITest {
 
         // Execute delete request
         result = doDeleteRequest(todoId);
-
         // Expect a appropriate result message.
         assertThat(result, is(String.format("Todo with the id \"%s\" not found!", todoId)));
     }
