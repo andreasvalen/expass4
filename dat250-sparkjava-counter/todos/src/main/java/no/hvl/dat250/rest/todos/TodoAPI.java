@@ -8,10 +8,6 @@ import java.util.Random;
 
 import com.google.gson.Gson;
 
-
-
-
-
 public class TodoAPI {
 
 	static List<Todo> todos = new ArrayList<Todo>();
@@ -128,7 +124,6 @@ public class TodoAPI {
         		res.status(200);        		
         	}
         	
-
             return res;
         	
         });
